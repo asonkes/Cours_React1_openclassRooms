@@ -1,0 +1,9 @@
+/********************************/
+/* Notre 1er composant est créé */
+/********************************/
+
+const Banner = () => {
+    return (<h1>La maison jungle</h1>)
+}
+
+export default Banner;

@@ -1,6 +1,5 @@
-import './App.css';
-import Banner from './components/Banner';
-import Cart from './components/Cart';
+import Banner from './Banner';
+import Cart from './Cart';
 
 function App() {
   return (

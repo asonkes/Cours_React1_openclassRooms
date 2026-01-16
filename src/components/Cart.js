@@ -1,3 +1,9 @@
+/********************************/
+/* Notre 2eme composant est créé */
+/********************************/
+
+import '../styles/Cart.css';
+
 const Cart = () => {
     const monsteraPrice = 8;
     const lierrePrice = 10;
@@ -5,8 +11,9 @@ const Cart = () => {
     const total = monsteraPrice + lierrePrice + flowersPrice;
 
     return (
-        <div>
+        <div className="lmj-cart">
             <div>
+                <h2>Panier</h2>
                 <ul>
                     <li>Monstera : { monsteraPrice } €</li>
                     <li>Lierre: { lierrePrice } €</li>

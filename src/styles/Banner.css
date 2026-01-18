@@ -1,13 +1,17 @@
 @import '../styles/Banner.css';
 
 .lmj-banner {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
 	color: black;
 	text-align: right;
 	padding: 32px;
 	border-bottom: solid 3px black;
-	display: flex;
-	justify-content: flex-end;
-	flex-direction: row;
+}
+
+.lmj-banner-row {
+	display: inline-flex;
 	align-items: center;
 }
 

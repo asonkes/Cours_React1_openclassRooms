@@ -7,6 +7,8 @@
  * ==> on exécute le fichier
  * ==> On IMPORTE PAS LES DONNEES !!!
  */
+
+import '../styles/ShoppingList.css';
 import { plantList } from '../datas/plantList';
 
 /** Reduce( ) me permet de créer le nouveau tableau qui vient de la DB */
@@ -23,20 +25,23 @@ const categories = plantList.reduce((acc, plant) => {
         return acc.concat(plant.category);
     }
 }, []);
-
 /** ici on va ajouter le composant lui-même */
 /** Map() affiche le tableau */
 const ShoppingList = () => {
     return (
-        <div>
-            <ul>
+        <div className='lmj-shopping-list'>
+            <ul className='lmj-plant-list-category'>
                 {categories.map(cat => 
-                    <li key={cat}>{cat}</li>
+                    <li key={cat} className='lmj-plant-category'>{cat}</li>
                 )}
             </ul>
-            <ul>
+            <ul className='lmj-plant-list'>
                 { plantList.map(plant =>
-                    <li key={`${plant.id}`}>{plant.name}</li>
+                    <li key={`${plant.id}`} className='lmj-plant-item'>
+                        {plant.name} 
+                        {plant.isBestSale && <span className='lmj-plant-bestSale'>Nos meilleures ventes 🔥</span>}
+                        {plant.isSpecialOffer ? <span className='lmj-plant-specialOffer'>Plantes en soldes 💥</span> : null}
+                    </li>
                 )}
             </ul>
         </div>
@@ -44,8 +49,3 @@ const ShoppingList = () => {
 }
 
 export default ShoppingList;
-
-/** Avec l'API
- * Cela donnera :
- * <li key={plant.id}>{plant.name}</li>
- */

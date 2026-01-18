@@ -10,6 +10,7 @@
 
 import '../styles/ShoppingList.css';
 import { plantList } from '../datas/plantList';
+import CareScale from './CareScale';
 
 /** Reduce( ) me permet de créer le nouveau tableau qui vient de la DB */
 /** acc = nouveau tableau que l'on va créer au fur et à mesure */
@@ -27,6 +28,8 @@ const categories = plantList.reduce((acc, plant) => {
 }, []);
 /** ici on va ajouter le composant lui-même */
 /** Map() affiche le tableau */
+
+/** scaleValue = plant.light (donc scaleValue vaut 1, 2 ou 3) */
 const ShoppingList = () => {
     return (
         <div className='lmj-shopping-list'>
@@ -41,6 +44,8 @@ const ShoppingList = () => {
                         {plant.name} 
                         {plant.isBestSale && <span className='lmj-plant-bestSale'>Nos meilleures ventes 🔥</span>}
                         {plant.isSpecialOffer ? <span className='lmj-plant-specialOffer'>Plantes en soldes 💥</span> : null}
+                        <CareScale careType='water' scaleValue={plant.light} className="lmj-plant-light"/>
+                        <CareScale careType='light' scaleValue={plant.water} className="lmj-plant-water"/>
                     </li>
                 )}
             </ul>

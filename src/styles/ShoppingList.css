@@ -47,7 +47,7 @@
 	position: relative;
 
 	.lmj-plant-bestSale {
-		padding-top: 20px;
+		padding-top: 5px;
 		color: orange;
 	}
 
@@ -58,6 +58,10 @@
 		color: white;
 		padding: 5px 10px;
 		background-color: #31b572;
+	}
+
+	.lmj-plant-light, .lmj-plant-water {
+		padding: 5px;
 	}
 }
 

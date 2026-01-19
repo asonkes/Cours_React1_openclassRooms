@@ -10,7 +10,7 @@
 
 import '../styles/ShoppingList.css';
 import { plantList } from '../datas/plantList';
-import CareScale from './CareScale';
+import PlantItem from './PlantItem';
 
 /** Reduce( ) me permet de créer le nouveau tableau qui vient de la DB */
 /** acc = nouveau tableau que l'on va créer au fur et à mesure */
@@ -39,15 +39,17 @@ const ShoppingList = () => {
                 )}
             </ul>
             <ul className='lmj-plant-list'>
-                { plantList.map(plant =>
-                    <li key={`${plant.id}`} className='lmj-plant-item'>
-                        {plant.name} 
-                        {plant.isBestSale && <span className='lmj-plant-bestSale'>Nos meilleures ventes 🔥</span>}
-                        {plant.isSpecialOffer ? <span className='lmj-plant-specialOffer'>Plantes en soldes 💥</span> : null}
-                        <CareScale careType='water' scaleValue={plant.light} className="lmj-plant-light"/>
-                        <CareScale careType='light' scaleValue={plant.water} className="lmj-plant-water"/>
-                    </li>
-                )}
+                { plantList.map( ({id, name, cover, light, water, isBestSale, isSpecialOffer}) => (
+                    <PlantItem
+                        key={id}
+                        name={name}
+                        cover={cover}
+                        isBestSale={isBestSale}
+                        isSpecialOffer={isSpecialOffer}
+                        light={light}
+                        water={water}
+                    />
+                ))}
             </ul>
         </div>
     );

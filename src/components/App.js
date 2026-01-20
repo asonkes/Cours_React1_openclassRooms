@@ -1,7 +1,7 @@
 import Banner from './Banner';
 import ShoppingList from './SoppingList';
 import Cart from './Cart';
-import QuestionForm from './QuestionForm';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Banner/>
       <ShoppingList/>
       <Cart/>
-      <QuestionForm/>
+      <Footer/>
     </div>
   );
 }

@@ -7,6 +7,8 @@ function Cart({ cart, updateCart }) {
     (acc, plantType) => acc + plantType.amount * plantType.price,
     0,
   );
+
+  /** Ici on peut faire en sorte de transformer mon "state" en tableau vide */
   return isOpen ? (
     <div className="lmj-cart">
       <button
